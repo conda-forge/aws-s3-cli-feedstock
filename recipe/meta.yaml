@@ -1,16 +1,16 @@
 {% set name = "aws-s3-cli" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0d40ed30d285bd0a1709ded86306f7ece329755f441d76f3c5a7d8f9aca698d2
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 66429ff2b1e020e67783057bfe841c508dbfb303dd31180dab0c7ec5c2dbff00
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
